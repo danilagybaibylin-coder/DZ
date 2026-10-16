@@ -1,12 +1,15 @@
 #include <stdio.h>
-#include <locale.h>
 #include <wchar.h>
-int main(){
-    setlocate(LC_ALL, "");
-    wchar_t codename [50];
-    if (wscanf(L"%49ls", codename) == 1) {
-        wprintf(L"Агент %ls авторизован в системе\n", codename);
+#include <locale.h>
 
-    }
-return 0;
+int main(void)
+{
+    setlocale(LC_ALL, "");
+
+    wchar_t call[100];
+    wscanf(L"%ls", call);
+
+    wprintf(L"Агент %ls авторизован в системе\n", call);
+
+    return 0;
 }
