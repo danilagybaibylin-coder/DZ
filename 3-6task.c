@@ -2,7 +2,7 @@
 int main (){
 char str[50];
 int width;
-if (scanf("%49s, %d", str, &width) == 2) {
+if scanf("%s, %d", str, &width) {
     printf("%*s\n", width, str);
     printf("%-*s\n", width + 5, str);
 }

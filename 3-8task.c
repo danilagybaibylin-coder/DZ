@@ -1,12 +1,17 @@
 #include <stdio.h>
-#include <string.h>
 #include <wchar.h>
 #include <locale.h>
-int main(){
-    setlocate(LC_ALL, "");
-    char utf8_string[] = "Сбой матрицы";
-    wchar_t wide_string[] = L"Сбой матрицы";
-    printf("char -> sizeof: %zu bytes, strlen: %zu chars\n", sizeof(utf8_string), strlen(utf8_string));
-    printf("wchar -> sizeof: %zu bytes, wcslen: %zu chars\n", sizeof(wide_string), wcslen(wide_string));
+#include <string.h>
+
+int main(void)
+{
+    setlocale(LC_ALL, "");
+
+    const char c[] = "Сбой матрицы";
+    const wchar_t wc[] = L"Сбой матрицы"; 
+
+    printf("char -> sizeof: %zu bytes, strlen: %d chars\n", sizeof(c), strlen(c));
+    printf("wchar -> sizeof: %zu bytes, wcslen: %d chars\n", sizeof(wc), wcslen(wc));
+
     return 0;
 }
